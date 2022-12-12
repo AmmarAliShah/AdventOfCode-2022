@@ -5,31 +5,54 @@
 
 totalScore = 0;
 
+
 with open('day2-input.txt', 'r') as f:
     for line in f.readlines():
         moves = line.split();
         opponentMove = moves[0];
-        yourMove = moves[1];
-        if opponentMove == "A" and yourMove == "X":
-            totalScore += 4;
-        elif opponentMove == "A" and yourMove == "Y":
-            totalScore += 8;
-        elif opponentMove == "A" and yourMove == "Z":
+        requiredResult = moves[1];
+        if opponentMove == "A" and requiredResult == "X":
             totalScore += 3;
-        elif opponentMove == "B" and yourMove == "X":
+        elif opponentMove == "A" and requiredResult == "Y":
+            totalScore += 4;
+        elif opponentMove == "A" and requiredResult == "Z":
+            totalScore += 8;
+        elif opponentMove == "B" and requiredResult == "X":
             totalScore += 1;
-        elif opponentMove == "B" and yourMove == "Y":
+        elif opponentMove == "B" and requiredResult == "Y":
             totalScore += 5;
-        elif opponentMove == "B" and yourMove == "Z":
+        elif opponentMove == "B" and requiredResult == "Z":
             totalScore += 9;
-        elif opponentMove == "C" and yourMove == "X":
-            totalScore += 7;
-        elif opponentMove == "C" and yourMove == "Y":
+        elif opponentMove == "C" and requiredResult == "X":
             totalScore += 2;
-        elif opponentMove == "C" and yourMove == "Z":
+        elif opponentMove == "C" and requiredResult == "Y":
             totalScore += 6;
+        elif opponentMove == "C" and requiredResult == "Z":
+            totalScore += 7;
+            
+        # Part 1 Solution
+        #yourMove = moves[1];
+        #if opponentMove == "A" and yourMove == "X":
+        #    totalScore += 4;
+        #elif opponentMove == "A" and yourMove == "Y":
+        #    totalScore += 8;
+        #elif opponentMove == "A" and yourMove == "Z":
+        #   totalScore += 3;
+        #elif opponentMove == "B" and yourMove == "X":
+        #    totalScore += 1;
+        #elif opponentMove == "B" and yourMove == "Y":
+        #    totalScore += 5;
+        #elif opponentMove == "B" and yourMove == "Z":
+        #    totalScore += 9;
+        #elif opponentMove == "C" and yourMove == "X":
+        #    totalScore += 7;
+        #elif opponentMove == "C" and yourMove == "Y":
+        #    totalScore += 2;
+        #elif opponentMove == "C" and yourMove == "Z":
+        #totalScore += 6;
         #print("Opponent: " + moves[0] + " | You: " + moves[1]);
         #print(line);
+
     f.close();
 
 print(totalScore);
